@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ super() }}
+{% endblock %}
+
+{% block content %}
+{{ super() }}
+<p>
+    <b>Автор:</b> {{ username }}
+</p>
+<p>
+    <b>Подробности поста:</b> {{ name }}
+</p>
+<p style="word-break: break-all">{{ content | safe }}</p>
+<hr>
+<h1>Комментировать пост</h1>
+{% for cat, msg in get_flashed_messages(True) %}
+    <div class="flash {{ cat }}">{{ msg }}</div>
+{% endfor %}
+
+<form action="post/{{ id }}" method="post" class="form-contacts">
+    <p>Имя: <input type="text" name="name" required></p>
+    <p>Комментарий:</p>
+    <p><textarea name="comment" cols="30" rows="10"></textarea></p>
+    <p><input type="submit" value="Отправить"></p>
+</form>
+<hr>
+<h2>Список комментариев</h2>
+<ul>
+    {% for c in comments %}
+    <li>
+        <p class="name">
+            Имя автора: {{ c.name }}
+        </p>
+
+        <div class="content"><b>Комментарий:</b><p style="text-indent: 25px;">{{ c.comment }}</p></div>
+
+        <p class="tm">
+            <small>Дата создания: {{ c.time }} </small>
+        </p>
+    </li>
+    <hr>
+    {% endfor %}
+</ul>
+{% endblock %}

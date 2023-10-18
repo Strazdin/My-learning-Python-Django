@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ super() }}
+{% endblock %}
+
+{% block content %}
+{{ super() }}
+<hr>
+<h2>Список постов</h2>
+<ul>
+    {% for p in posts %}
+    <li>
+        <p class="name">
+            Имя автора: {{ p.username }}
+        </p>
+
+        <p class="title">
+            <a href="post/{{ p.id }}">Тема: {{ p.name }}</a>
+        </p>
+
+
+        <div class="content"><b>Содержание:</b><p style="text-indent: 25px;">{{ p.content[:100] | striptags }}</p></div>
+        <p class="tm">
+            <small>Дата создания: {{ p.time }} </small>
+        </p>
+    </li>
+    <hr>
+    {% endfor %}
+</ul>
+{% endblock %}

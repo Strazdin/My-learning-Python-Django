@@ -1,0 +1,100 @@
+body{
+    font-family: 'Segoe UI', sans-serif;
+    background: rgba(0, 179, 255, 0.41);
+    margin: 0;
+    padding: 0;
+}
+.menu{
+    display: flex;
+    justify-content: start;
+    list-style: none;
+    background: rgb(0, 255, 251);
+    margin-top: 0;
+}
+
+.menu li{
+    padding: 20px;
+}
+
+.menu li a{
+    text-decoration: none;
+    font-size: 22px;
+    color: black;
+    border-bottom: 2px solid rgb(116, 32, 32);
+}
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.flash{
+    padding: 10px;
+    width: 300px;
+}
+.flash.success{
+    border: 1px solid #21DB56;
+    background: #AEFFC5;
+}
+.flash.error{
+    border: 1px solid #FF5343;
+    background: #FF9C9C;
+}
+
+div .content{
+    word-break: break-all
+}
+
+.menu a{
+    font-weight: bold;
+    color: brown;
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+}
+
+p>a{
+    text-decoration: none;
+    color: brown;
+}
+
+li>p, li div{
+    border: 1px solid #CCC;
+    padding: 10px 20px;
+}
+
+p.name{
+    margin: 0;
+    font-weight: bolder;
+    background: rgb(64, 255, 0);
+}
+
+p.title{
+    text-decoration: none;
+    border-bottom: 2px solid rgb(116, 32, 32);
+
+    margin: 0;
+    font-weight: bold;
+    background: rgba(0, 255, 64, 0.574);
+}
+p.title a{
+    display: block;
+}
+
+p.tm{
+    margin: 0;
+    font-weight: lighter;
+    background: rgba(64, 255, 0, 0.56);
+}
+
+p.title:hover{
+    background: orange;
+}
+.content{
+    margin-top: -1px;
+    font-weight: normal;
+    background: rgba(0, 255, 64, 0.574);
+}
