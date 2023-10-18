@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ super() }}
+{% endblock %}
+
+{% block content %}
+{{ super() }}
+<hr>
+<h2>Список статей</h2>
+<ul>
+    {% for p in posts %}
+    <li>
+        <p class="name">
+            <b>Имя автора:</b> {{ p.username }}
+        </p>
+        <p class="title">
+            <b>Тема:</b> {{ p.name }}
+        </p>
+        <div class="content"><b>Содержание:</b><p style="text-indent: 25px;">{{ p.content }}</p></div>
+        <p class="tm">
+            <small>Дата создания: {{ p.time }} </small>
+        </p>
+    </li>
+    <hr>
+    {% endfor %}
+</ul>
+{% endblock %}
